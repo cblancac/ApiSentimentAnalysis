@@ -1,0 +1,11 @@
+Flask
+flask_restful
+pymongo
+bcrypt
+bert-embedding==1.0.1
+scikit-learn==0.23.1
+spacy==2.3.2
+Keras==2.8.0
+tensorflow==2.2.0
+pandas
+numpy==1.18.5
