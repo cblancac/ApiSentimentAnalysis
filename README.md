@@ -4,9 +4,9 @@
 
 # ApiSentimentAnalysis
 
-In this project you will create a **RESTful API** using some cool technologies like **Flask**, **Docker** or **MongoDB**. A RESTful API is basically an API which supports HTTP conections. The browser will be able to send HTTP request to the server that is going to be created. The server is going to have opened a few endpoints, which can receive some sentence and make the computation neccesary to classify its feelings (a value between 0 and 1, colser to one, the more positive is the feeling of the sentence). Finally, once the response is ready, it takes it back to our browser, displaying it for us.
+In this project you will create a **RESTful API** using some cool technologies like **Flask**, **Docker** or **MongoDB**. A RESTful API is basically an API which supports HTTP connections. The browser will be able to send HTTP request to the server that is going to be created. The server is going to open a few endpoints, which can receive some sentence and make the computation neccesary to classify its feelings (a value between 0 and 1, closer to one, the more positive is the feeling of the sentence). Finally, once the response is ready, it takes it back to the browser, displaying it for us in a JSON format.
 
-It has a better understand watching the chart protocol for the API:
+It is better to understand it by watching the chart protocol for the API:
 
 | Resources | URL| Method | Parameters | Status Code |
 | ----- | ---- | ---- | ---- | ---- |
@@ -16,7 +16,7 @@ It has a better understand watching the chart protocol for the API:
 
 
 ## :gear: Setup
-- We will be using Postman, Docker, Docker compose and MongoDB. If you don't have them installed in your PC, you could do it following the instractions:
+- We will be using Postman, Docker, Docker compose and MongoDB. If you don't have them installed in your PC, you could do it following the instructions:
   - Postman: https://www.bluematador.com/blog/postman-how-to-install-on-ubuntu-1604
   - Docker: https://docs.docker.com/engine/install/ubuntu/
   - Docker compose: https://docs.docker.com/compose/install/
@@ -27,16 +27,16 @@ It has a better understand watching the chart protocol for the API:
 - `sudo docker-compose build`
 - `sudo docker-compose up`
 
-## :tada: Lets try the API
-Once the setup is done, we could try the API. Postman is needed for that, so you should type `postman` in your terminal. Now we have to register, so call to the endpoint /register is needed, sending a user and password. 
+## :tada: Let's try the API
+Once the setup is done, we could try the API. Postman is needed for that, so you should type `postman` in your terminal. Now we have to register, then call to the endpoint `/register` is needed, sending a username and a password. 
 
 ![register](https://user-images.githubusercontent.com/105242658/170741691-bc91fb42-00d5-4d3f-bd6d-70d52d730557.png)
 
-Now we will have an account and we could use the web server to messure the feeling of some sentences because our information as a user has been storage in MongoDB. We start having 10 tokens and we will spend 1 of them every time we use the API to predict the feeling of our sentence. Lets see the API in action when we send a POST request to classify the feeling of one text
+Now we will have an account and we could use the web server to measure the feeling of some sentences because our information as a user has been stored in MongoDB. We start having 10 tokens and we will spend 1 of them every time we use the API to predict the feeling of our sentence. Let's see the API in action when we send a POST request to classify the feeling of one text
 
 ![classify_feelings](https://user-images.githubusercontent.com/105242658/170743771-585cd156-17e7-4d88-af4c-c2f94b1f2562.png)
 
-Once all the tokens are spended they can be refilled again. To do that the admin password is needed (only the API owner knows it). In this case the endpoint needed is `/refill`, giving as a input:
+Once all the tokens are spended they can be refilled again. To do that, the admin password is needed (only the API owner knows it). In this case the endpoint needed is `/refill`, giving as an input:
 - *user_name*: Username registered 
 - *admin_pw*: Administrator password
 - *refill*: How many tokens it has to be refilled to the user
